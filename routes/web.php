@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('word', function(){
+    return view('word');
+});
+
+Route::post('word', [WordController::class, 'index'])->name('word.index');
